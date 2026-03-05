@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LucidReview — Commercialization Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg0:#06090f;--bg1:#0b1120;--bg2:#111827;
+  --glass:rgba(11,17,32,.72);
+  --bd0:rgba(255,255,255,.05);--bd1:rgba(255,255,255,.11);--bd2:rgba(255,255,255,.18);
+  --cyan:#00d4f5;--cyan2:rgba(0,212,245,.15);--cyan3:rgba(0,212,245,.08);
+  --mint:#00e5a0;--mint2:rgba(0,229,160,.14);--mint3:rgba(0,229,160,.07);
+  --amber:#f5a623;--red:#f56342;--violet:#8b5cf6;
+  --t1:#eef2ff;--t2:#8899b4;--t3:#4a5568;
+  --fd:'Sora',sans-serif;--fs:'DM Serif Display',serif;--fb:'Plus Jakarta Sans',sans-serif;--fm:'JetBrains Mono',monospace;
+  --r1:6px;--r2:12px;--r3:20px;--r4:32px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg0);color:var(--t1);font-family:var(--fb);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+#bgc{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.3}
+.pc{position:relative;z-index:1}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--bd1),transparent)}
+h1,h2,h3{font-family:var(--fd);line-height:1.12;letter-spacing:-.02em}
+.si{font-family:var(--fs);font-style:italic;font-weight:400}
+.grad{background:linear-gradient(130deg,var(--cyan) 0%,var(--mint) 55%,#6be8ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tag{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;padding:4px 11px;border-radius:100px;border:1px solid}
+.tc{color:var(--cyan);border-color:rgba(0,212,245,.28);background:var(--cyan3)}
+.tm{color:var(--mint);border-color:rgba(0,229,160,.28);background:var(--mint3)}
+.ta{color:var(--amber);border-color:rgba(245,166,35,.28);background:rgba(245,166,35,.08)}
+.tr{color:var(--red);border-color:rgba(245,99,66,.28);background:rgba(245,99,66,.08)}
+.tv{color:var(--violet);border-color:rgba(139,92,246,.28);background:rgba(139,92,246,.08)}
+.sec-label{font-family:var(--fm);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+.btn-p{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;background:linear-gradient(135deg,var(--cyan),var(--mint));color:#06090f;font-weight:700;font-size:14.5px;border-radius:100px;text-decoration:none;transition:opacity .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 24px rgba(0,212,245,.22);border:none;cursor:pointer}
+.btn-p:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,212,245,.32)}
+.btn-s{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;color:var(--t1);font-weight:600;font-size:14.5px;border-radius:100px;text-decoration:none;border:1px solid var(--bd1);transition:background .2s,border-color .2s;background:rgba(255,255,255,.04)}
+.btn-s:hover{background:rgba(255,255,255,.08);border-color:var(--bd2)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.rv.vis{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+
+/* Nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:15px 0;transition:background .3s,border-color .3s}
+nav.sc{background:rgba(6,9,15,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--bd0)}
+.ni{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.lm{width:32px;height:32px;background:linear-gradient(135deg,var(--cyan),var(--mint));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:800;font-size:13px;color:#06090f;flex-shrink:0}
+.lt{font-family:var(--fd);font-weight:700;font-size:18px;color:var(--t1)}
+.nl{display:flex;align-items:center;gap:28px;list-style:none}
+.nl a{text-decoration:none;color:var(--t2);font-size:14px;font-weight:500;transition:color .2s}
+.nl a:hover{color:var(--t1)}
+.nc-cta{display:inline-flex;align-items:center;gap:7px;padding:8px 18px;background:linear-gradient(135deg,var(--cyan),var(--mint));color:#06090f;font-weight:700;font-size:13px;border-radius:100px;text-decoration:none;transition:opacity .2s,transform .2s;border:none;cursor:pointer}
+.nc-cta:hover{opacity:.9;transform:translateY(-1px)}
+
+/* Hero */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative}
+.hero-inner{text-align:center;max-width:860px;margin:0 auto}
+.heyebrow{display:flex;gap:8px;margin-bottom:26px;justify-content:center;flex-wrap:wrap}
+.hhead{font-size:clamp(40px,5.5vw,64px);font-weight:800;margin-bottom:22px}
+.hsub{font-size:17px;color:var(--t2);line-height:1.75;margin-bottom:44px;max-width:620px;margin-left:auto;margin-right:auto;font-weight:300}
+
+/* Stats bar */
+.stats-bar{padding:28px 0;border-top:1px solid var(--bd0);border-bottom:1px solid var(--bd0);background:linear-gradient(90deg,transparent,rgba(0,212,245,.025),transparent)}
+.sg{display:grid;grid-template-columns:repeat(4,1fr)}
+.si3{text-align:center;padding:6px 16px;border-right:1px solid var(--bd0)}
+.si3:last-child{border-right:none}
+.snum{font-family:var(--fd);font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1;margin-bottom:5px}
+.slab{font-size:13px;color:var(--t2);font-weight:400}
+
+/* Sections */
+.sec{padding:92px 0}
+.sec-dark{background:linear-gradient(180deg,var(--bg0) 0%,var(--bg1) 50%,var(--bg0) 100%)}
+.sec-surf{background:var(--bg1);border-top:1px solid var(--bd0);border-bottom:1px solid var(--bd0)}
+.sh{text-align:center;margin-bottom:60px}
+.stitle{font-size:clamp(30px,3.5vw,46px);font-weight:800;margin-bottom:14px}
+.ssub{font-size:17px;color:var(--t2);font-weight:300;max-width:580px;margin:0 auto;line-height:1.75}
+
+/* Problem cards */
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.pstats{display:flex;flex-direction:column;gap:18px}
+.pcard{background:var(--bg1);border:1px solid var(--bd0);border-radius:var(--r2);padding:22px;position:relative;overflow:hidden}
+.pcard::after{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--red)}
+.pcard.warn::after{background:var(--amber)}
+.pcard.ok::after{background:var(--cyan)}
+.pnum{font-family:var(--fd);font-size:40px;font-weight:800;letter-spacing:-.02em;color:var(--red);line-height:1}
+.pnum.w{color:var(--amber)}.pnum.c{color:var(--cyan)}.pnum.g{color:var(--mint)}
+.pdesc{font-size:13px;color:var(--t2);margin-top:5px;line-height:1.6}
+.ptxt h3{font-size:27px;font-weight:700;margin-bottom:14px}
+.ptxt p{color:var(--t2);font-size:15px;line-height:1.78;margin-bottom:14px;font-weight:300}
+.pbullets{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:22px}
+.pbullets li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--t2)}
+.bico{width:18px;height:18px;border-radius:50%;background:var(--mint3);border:1px solid rgba(0,229,160,.25);display:flex;align-items:center;justify-content:center;color:var(--mint);font-size:9px;flex-shrink:0;margin-top:1px}
+
+/* Feature grid */
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fcard{background:var(--bg1);border:1px solid var(--bd0);border-radius:var(--r3);padding:26px;transition:border-color .3s,background .3s,transform .3s;position:relative;overflow:hidden}
+.fcard::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .3s;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,245,.07),transparent 65%);pointer-events:none}
+.fcard:hover{border-color:rgba(0,212,245,.22);background:var(--bg2);transform:translateY(-4px)}
+.fcard:hover::before{opacity:1}
+.fico{width:42px;height:42px;border-radius:var(--r2);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:18px}
+.ftitle{font-size:16px;font-weight:700;margin-bottom:9px;font-family:var(--fd)}
+.fdesc{font-size:13.5px;color:var(--t2);line-height:1.68;font-weight:300}
+.ffoot{margin-top:14px;padding-top:14px;border-top:1px solid var(--bd0);display:flex;gap:5px;flex-wrap:wrap}
+.code-tag{font-family:var(--fm);font-size:10px;padding:3px 7px;border-radius:4px;background:rgba(255,255,255,.04);border:1px solid var(--bd0);color:var(--t3)}
+
+/* Volume bars */
+.vol-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+.vol-row{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.vol-name{font-size:13px;width:155px;flex-shrink:0;color:var(--t2)}
+.vol-track{flex:1;height:28px;background:rgba(255,255,255,.03);border:1px solid var(--bd0);border-radius:var(--r1);overflow:hidden;position:relative}
+.vol-fill{height:100%;border-radius:var(--r1);background:linear-gradient(90deg,rgba(0,212,245,.4),var(--cyan));width:0;transition:width 1.3s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:flex-end;padding-right:8px}
+.vol-fill.amber{background:linear-gradient(90deg,rgba(245,166,35,.4),var(--amber))}
+.vol-fill.red{background:linear-gradient(90deg,rgba(245,99,66,.3),var(--red))}
+.vol-pct{font-family:var(--fm);font-size:10px;font-weight:500;color:var(--bg0)}
+.vol-app{font-family:var(--fm);font-size:11px;width:52px;flex-shrink:0;text-align:right}
+
+/* Criteria comparison */
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.cmp-card{background:var(--bg1);border:1px solid var(--bd0);border-radius:var(--r3);padding:28px;position:relative;overflow:hidden}
+.cmp-card.win{border-color:rgba(0,229,160,.28);background:linear-gradient(135deg,var(--bg1),rgba(0,229,160,.04))}
+.cmp-card.win::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 0%,rgba(0,229,160,.07),transparent 60%);pointer-events:none}
+.cmp-header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.cmp-icon{width:40px;height:40px;border-radius:var(--r2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.cmp-title{font-size:16px;font-weight:700;font-family:var(--fd)}
+.cmp-sub{font-size:12px;color:var(--t3);margin-top:2px}
+.cmp-list{list-style:none;display:flex;flex-direction:column;gap:9px}
+.cmp-list li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px;color:var(--t2);line-height:1.55}
+.cmp-list li .ico{flex-shrink:0;margin-top:2px;font-size:11px}
+.cmp-callout{margin-top:18px;background:rgba(0,229,160,.06);border:1px solid rgba(0,229,160,.2);border-radius:var(--r2);padding:14px 16px;font-size:12.5px;color:var(--t2);line-height:1.65}
+.cmp-callout strong{color:var(--mint)}
+
+/* Coverage bars */
+.cov-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.cov-name{font-size:12px;width:120px;flex-shrink:0;color:var(--t2)}
+.cov-track{flex:1;height:18px;background:rgba(255,255,255,.03);border:1px solid var(--bd0);border-radius:var(--r1);overflow:hidden}
+.cov-fill{height:100%;border-radius:var(--r1);width:0;transition:width 1s cubic-bezier(.22,1,.36,1)}
+.cov-fill.free{background:linear-gradient(90deg,rgba(0,229,160,.3),var(--mint))}
+.cov-fill.skip{background:linear-gradient(90deg,rgba(245,99,66,.3),var(--red))}
+.cov-pct{font-family:var(--fm);font-size:10px;width:30px;text-align:right}
+.cov-badge{font-family:var(--fm);font-size:9px;padding:2px 8px;border-radius:100px;width:42px;text-align:center}
+.cov-badge.free{background:var(--mint3);color:var(--mint);border:1px solid rgba(0,229,160,.25)}
+.cov-badge.skip{background:rgba(245,99,66,.08);color:var(--red);border:1px solid rgba(245,99,66,.25)}
+
+/* Market cards */
+.mkt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.mkt-card{background:var(--bg1);border:1px solid var(--bd0);border-radius:var(--r3);padding:28px;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+.mkt-card:hover{border-color:var(--bd1);transform:translateY(-4px)}
+.mkt-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--r3) var(--r3) 0 0}
+.mkt-card.c1::before{background:linear-gradient(90deg,var(--cyan),transparent)}
+.mkt-card.c2::before{background:linear-gradient(90deg,var(--amber),transparent)}
+.mkt-card.c3::before{background:linear-gradient(90deg,var(--violet),transparent)}
+.mkt-type{font-family:var(--fm);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:10px}
+.mkt-card.c1 .mkt-type{color:var(--cyan)}.mkt-card.c2 .mkt-type{color:var(--amber)}.mkt-card.c3 .mkt-type{color:var(--violet)}
+.mkt-tam{font-family:var(--fd);font-size:36px;font-weight:800;line-height:1;margin-bottom:4px}
+.mkt-card.c1 .mkt-tam{color:var(--cyan)}.mkt-card.c2 .mkt-tam{color:var(--amber)}.mkt-card.c3 .mkt-tam{color:var(--violet)}
+.mkt-taml{font-size:13px;color:var(--t3);margin-bottom:18px}
+.mkt-stats{display:flex;flex-direction:column;gap:6px}
+.mkt-stat{font-size:13px;color:var(--t2);display:flex;align-items:flex-start;gap:6px}
+.mkt-stat::before{content:'·';color:var(--cyan);flex-shrink:0}
+.tam-total{margin-top:24px;background:var(--glass);backdrop-filter:blur(16px);border:1px solid var(--bd1);border-radius:var(--r3);padding:28px 36px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.tam-total::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,212,245,.06),transparent 70%);pointer-events:none}
+.tam-label{font-size:18px;font-weight:600;font-family:var(--fd)}
+.tam-num{font-family:var(--fd);font-size:48px;font-weight:800}
+.tam-sub{font-size:13px;color:var(--t2)}
+.reg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.reg-card{background:var(--bg2);border:1px solid var(--bd0);border-radius:var(--r2);padding:16px}
+.reg-date{font-family:var(--fm);font-size:14px;font-weight:500;color:var(--cyan);margin-bottom:4px}
+.reg-text{font-size:12.5px;color:var(--t2);line-height:1.6}
+
+/* Comp table */
+.ctbl{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;border-radius:var(--r3);overflow:hidden;border:1px solid var(--bd0)}
+.ctbl th{font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--t3);padding:14px 16px;text-align:left;background:var(--bg2);border-bottom:1px solid var(--bd0)}
+.ctbl td{padding:14px 16px;border-bottom:1px solid var(--bd0);color:var(--t2);vertical-align:top}
+.ctbl tr:last-child td{border-bottom:none}
+.ctbl tr.me td{background:rgba(0,212,245,.04)}
+.ctbl tr:hover td{background:rgba(255,255,255,.02)}
+.cname{font-weight:600;color:var(--t1);font-size:13.5px}
+.ctbl tr.me .cname{color:var(--cyan)}
+.ck{color:var(--mint)}.cx{color:var(--red)}.cp{color:var(--amber)}
+
+/* Pricing */
+.price-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.pc2{background:var(--bg1);border:1px solid var(--bd0);border-radius:var(--r3);padding:28px;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+.pc2:hover{border-color:var(--bd1);transform:translateY(-3px)}
+.pc2.feat{border-color:rgba(0,212,245,.24);background:linear-gradient(135deg,var(--bg1),rgba(0,212,245,.04))}
+.pc2.feat::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,245,.08),transparent 60%);pointer-events:none}
+.pc2 .tier{font-family:var(--fm);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+.pc2 .amt{font-family:var(--fd);font-size:32px;font-weight:800;line-height:1;margin-bottom:4px}
+.pc2 .unit{font-size:12px;color:var(--t3);margin-bottom:14px}
+.pc2 .mem{font-size:12.5px;color:var(--t2);margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid var(--bd0)}
+.pc2 .feats{list-style:none;display:flex;flex-direction:column;gap:8px}
+.pc2 .feats li{font-size:12.5px;color:var(--t2);padding-left:16px;position:relative;line-height:1.5}
+.pc2 .feats li::before{content:'->'; position:absolute;left:0;color:var(--cyan);font-family:var(--fm);font-size:10px}
+.pc2 .arr{margin-top:18px;font-family:var(--fm);font-size:12px;color:var(--amber)}
+.roi-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.roi-cell{background:var(--bg1);border:1px solid var(--bd0);border-radius:var(--r3);padding:24px;text-align:center}
+.roi-num{font-family:var(--fd);font-size:34px;font-weight:800;margin-bottom:6px}
+.roi-lab{font-size:13px;color:var(--t2);line-height:1.5}
+
+/* Timeline */
+.tl-wrap{position:relative;max-width:780px;margin:0 auto;padding:32px 0}
+.tl-wrap::before{content:'';position:absolute;left:27px;top:20px;bottom:20px;width:1px;background:linear-gradient(180deg,rgba(0,212,245,.5),rgba(0,229,160,.4),transparent)}
+.tl-item{display:grid;grid-template-columns:56px 1fr;gap:22px;align-items:flex-start;padding:14px 0}
+.tl-dot{width:56px;height:56px;border-radius:var(--r2);border:1px solid var(--bd1);background:var(--bg2);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:800;font-size:14px;color:var(--cyan);flex-shrink:0;position:relative;z-index:1;transition:background .3s,border-color .3s}
+.tl-item:hover .tl-dot{background:var(--cyan3);border-color:var(--cyan)}
+.tl-body{padding:6px 0}
+.tl-phase{font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px}
+.tl-title{font-size:16px;font-weight:700;margin-bottom:6px;font-family:var(--fd)}
+.tl-desc{font-size:14px;color:var(--t2);line-height:1.68;font-weight:300;margin-bottom:9px}
+.tl-tags{display:flex;gap:5px;flex-wrap:wrap}
+
+/* Invest row */
+.inv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.inv-cell{background:var(--bg2);border:1px solid var(--bd0);border-radius:var(--r2);padding:20px}
+.inv-label{font-family:var(--fm);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:8px}
+.inv-amt{font-family:var(--fd);font-size:22px;font-weight:800;color:var(--amber);margin-bottom:4px}
+.inv-note{font-size:11.5px;color:var(--t3);line-height:1.5}
+
+/* CTA */
+.cta-sec{padding:112px 0;text-align:center;position:relative;overflow:hidden}
+.cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(0,212,245,.09),transparent 70%);pointer-events:none}
+.cta-sec h2{font-size:clamp(34px,5vw,54px);font-weight:800;margin-bottom:18px;position:relative}
+.cta-sec p{font-size:17px;color:var(--t2);font-weight:300;max-width:500px;margin:0 auto 36px;line-height:1.75;position:relative}
+.cta-acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+.cta-sub{font-family:var(--fm);font-size:11px;color:var(--t3);margin-top:18px;position:relative;letter-spacing:.06em}
+
+/* Footer */
+footer{background:var(--bg1);border-top:1px solid var(--bd0);padding:44px 0}
+.fi{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.flogo{display:flex;align-items:center;gap:9px}
+.flm{width:26px;height:26px;background:linear-gradient(135deg,var(--cyan),var(--mint));border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#06090f}
+.flt{font-size:15px;font-weight:700}
+.fcopy{font-size:11.5px;color:var(--t3)}
+
+@media(max-width:1024px){
+  .fgrid,.mkt-grid,.price-grid{grid-template-columns:repeat(2,1fr)}
+  .cmp-grid,.prob-grid,.vol-grid{grid-template-columns:1fr}
+  .inv-grid{grid-template-columns:repeat(2,1fr)}
+  .reg-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .fgrid,.mkt-grid,.price-grid{grid-template-columns:1fr}
+  .sg{grid-template-columns:repeat(2,1fr)}
+  .roi-strip{grid-template-columns:1fr}
+  .nl{display:none}
+  .sec{padding:64px 0}
+  .ctbl{font-size:11px}
+  .ctbl th,.ctbl td{padding:10px 8px}
+}
+</style>
+</head>
+<body>
+
+<canvas id="bgc"></canvas>
+
+<div class="pc">
+
+<!-- Nav -->
+<nav id="mn">
+  <div class="wrap">
+    <div class="ni">
+      <a href="index.html" class="logo">
+        <div class="lm">LR</div>
+        <span class="lt">LucidReview</span>
+      </a>
+      <ul class="nl">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#workflow">How It Works</a></li>
+        <li><a href="#market">Market</a></li>
+        <li><a href="#competitive">Competitive</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#execution">Execution</a></li>
+      </ul>
+      <button class="nc-cta">Request Demo</button>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="heyebrow">
+        <span class="tag tc">Commercialization Brief</span>
+        <span class="tag tm">Medicare & Medicaid</span>
+        <span class="tag ta">Confidential</span>
+      </div>
+      <h1 class="hhead">
+        Automate UM for the market that<br>
+        <span class="si"><span class="grad">needs it most.</span></span>
+      </h1>
+      <p class="hsub">LucidReview replaces MCG and InterQual dependency with CMS-grounded clinical criteria, deterministic CQL evaluation, and a transparent AI agent purpose-built for Medicare Advantage and Medicaid health plans.</p>
+      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:44px">
+        <a href="#market" class="btn-p">Market Opportunity</a>
+        <a href="#pricing" class="btn-s">Pricing Model</a>
+        <a href="#execution" class="btn-s">Execution Plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="wrap">
+    <div class="sg">
+      <div class="si3 rv">
+        <div class="snum grad" data-count="9974" data-suf="">0</div>
+        <div class="slab">real SCAN cases analyzed</div>
+      </div>
+      <div class="si3 rv d1">
+        <div class="snum" style="color:var(--red)" data-count="82" data-suf=".7%">0</div>
+        <div class="slab">documentation gap rate</div>
+      </div>
+      <div class="si3 rv d2">
+        <div class="snum grad" data-count="80" data-suf="%+">0</div>
+        <div class="slab">cost reduction per case</div>
+      </div>
+      <div class="si3 rv d3">
+        <div class="snum" style="color:var(--amber)">2027</div>
+        <div class="slab">CMS FHIR PA API mandate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Problem -->
+<section class="sec" id="problem">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sec-label">The Problem</div>
+      <h2 class="stitle">Prior auth is <span class="grad">broken at the operational layer.</span></h2>
+      <p class="ssub">82.7% of cases reach a reviewer with missing documentation. Most denials follow predictable patterns. And every health plan faces a regulatory mandate to modernize by 2027.</p>
+    </div>
+    <div class="prob-grid">
+      <div class="pstats">
+        <div class="pcard rv">
+          <div class="pnum" data-count="82" data-suf=".7%">0</div>
+          <div class="pdesc">of cases arrive without documentation needed to determine. Detected pre-reviewer by AI.</div>
+        </div>
+        <div class="pcard warn rv d1">
+          <div class="pnum w" data-count="40" data-suf="%">0</div>
+          <div class="pdesc">of denials follow predictable patterns that AI can flag before MD review.</div>
+        </div>
+        <div class="pcard ok rv d2">
+          <div class="pnum c">$15-25</div>
+          <div class="pdesc">blended cost per case in clinical reviewer labor today. LucidReview brings it to $3-8.</div>
+        </div>
+        <div class="pcard warn rv d3">
+          <div class="pnum w">$500K+</div>
+          <div class="pdesc">annual MCG/InterQual licensing cost per plan &mdash; and for MA, CMS requires public criteria anyway.</div>
+        </div>
+      </div>
+      <div class="ptxt rv d1">
+        <h3>The criteria source matters for <span class="grad">this market.</span></h3>
+        <p>For Medicare Advantage, CMS guidance explicitly requires decisions to align with Traditional Medicare criteria (NCDs/LCDs). MCG and InterQual are only permitted where CMS criteria are "not fully established" &mdash; making public CMS criteria the legally correct foundation.</p>
+        <p>LucidReview ingests CMS criteria automatically via the Coverage API, compiles them into executable CQL, and evaluates them deterministically against FHIR-normalized patient data. No licensing dependency. Full regulatory alignment.</p>
+        <ul class="pbullets">
+          <li><div class="bico">&#10003;</div><span>Medi-Cal criteria: 87% of cases &mdash; free, published by CA DHCS</span></li>
+          <li><div class="bico">&#10003;</div><span>Medicare NCD/LCD: 46.4% of cases &mdash; free, CMS Coverage API</span></li>
+          <li><div class="bico">&#10003;</div><span>MCG: 28.4% &mdash; skipped (replaced by clinical team CQL)</span></li>
+          <li><div class="bico">&#10003;</div><span>InterQual: 23.9% &mdash; skipped (replaced by clinical team CQL)</span></li>
+          <li><div class="bico">&#10003;</div><span>85-90% of cases covered with zero licensing fees</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- How It Works -->
+<section class="sec sec-dark" id="workflow">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sec-label">The AI Agent Pipeline</div>
+      <h2 class="stitle">8 steps from <span class="grad">case to determination</span></h2>
+      <p class="ssub">Claude AI orchestrates the entire review workflow through 14 MCP tools. Deterministic CQL criteria decide the outcome. The LLM synthesizes and explains.</p>
+    </div>
+    <div class="fgrid">
+      <div class="fcard rv">
+        <div class="fico" style="background:var(--cyan3)">&#128269;</div>
+        <div class="ftitle">1. Gather Case Data</div>
+        <div class="fdesc">Fetches case metadata, ICD-10/CPT codes, clinical info, and member coverage verification from the UM system via REST APIs.</div>
+        <div class="ffoot"><span class="code-tag">um_get_case</span><span class="code-tag">um_get_clinical_info</span></div>
+      </div>
+      <div class="fcard rv d1">
+        <div class="fico" style="background:rgba(245,166,35,.1)">&#128196;</div>
+        <div class="ftitle">2. Extract Documents</div>
+        <div class="fdesc">Downloads clinical PDFs and extracts text using pdf-parse with AWS Textract OCR fallback for scanned documents.</div>
+        <div class="ffoot"><span class="code-tag">pdf_extract_text</span><span class="code-tag">OCR fallback</span></div>
+      </div>
+      <div class="fcard rv d2">
+        <div class="fico" style="background:rgba(139,92,246,.1)">&#129504;</div>
+        <div class="ftitle">3. Clinical NLP</div>
+        <div class="fdesc">cTAKES/medspaCy extracts clinical entities with assertion status (affirmed/negated/uncertain) and temporality for each finding.</div>
+        <div class="ffoot"><span class="code-tag">nlp_extract</span><span class="code-tag">cTAKES</span><span class="code-tag">Assertion</span></div>
+      </div>
+      <div class="fcard rv">
+        <div class="fico" style="background:var(--mint3)">&#9877;&#65039;</div>
+        <div class="ftitle">4. FHIR Normalization</div>
+        <div class="fdesc">Maps all evidence to FHIR R4 resources (Patient, Condition, Observation, Procedure) with provenance tracking. Posted to HAPI FHIR server.</div>
+        <div class="ffoot"><span class="code-tag">fhir_normalize</span><span class="code-tag">HAPI FHIR R4</span></div>
+      </div>
+      <div class="fcard rv d1">
+        <div class="fico" style="background:var(--cyan3)">&#128214;</div>
+        <div class="ftitle">5. Policy Lookup</div>
+        <div class="fdesc">Matches diagnosis codes and service type to applicable CMS NCD/LCD policies. CMS Coverage API integration is live and auto-updating.</div>
+        <div class="ffoot"><span class="code-tag">policy_lookup</span><span class="code-tag">CMS API</span></div>
+      </div>
+      <div class="fcard rv d2">
+        <div class="fico" style="background:rgba(245,166,35,.1)">&#9878;&#65039;</div>
+        <div class="ftitle">6. CQL Evaluation</div>
+        <div class="fdesc">Executes CQL criteria against FHIR data in HAPI FHIR Clinical Reasoning. Deterministic MET/NOT_MET/UNKNOWN &mdash; not LLM inference.</div>
+        <div class="ffoot"><span class="code-tag">cql_evaluate</span><span class="code-tag">CQL 1.5</span></div>
+      </div>
+      <div class="fcard rv">
+        <div class="fico" style="background:var(--mint3)">&#9989;</div>
+        <div class="ftitle">7. Determination</div>
+        <div class="fdesc">Conservative deterministic logic proposes AUTO_APPROVE, MD_REVIEW, MORE_INFO, or DENY with specific evidence citations for every criterion.</div>
+        <div class="ffoot"><span class="code-tag">propose_determination</span><span class="code-tag">Audit trail</span></div>
+      </div>
+      <div class="fcard rv d1">
+        <div class="fico" style="background:var(--cyan3)">&#128100;</div>
+        <div class="ftitle">8. Human Review</div>
+        <div class="fdesc">Nurse or MD reviews AI trace, inspects evidence in Reviewer UI, and approves or overrides. Human sign-off always required. Full audit trail preserved.</div>
+        <div class="ffoot"><span class="code-tag">Reviewer UI</span><span class="code-tag">React 19</span></div>
+      </div>
+      <div class="fcard rv d2">
+        <div class="fico" style="background:rgba(139,92,246,.1)">&#128200;</div>
+        <div class="ftitle">AI Criteria Synthesis</div>
+        <div class="fdesc">Claude synthesizes multiple regional LCD variants into one authoritative criteria decision tree &mdash; a capability no competitor offers. Already implemented in the codebase.</div>
+        <div class="ffoot"><span class="code-tag">criteria_tree</span><span class="code-tag">Bedrock</span><span class="code-tag">Multi-LCD merge</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Case Volume -->
+<section class="sec sec-surf" id="volume">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sec-label">Data-Driven Priorities</div>
+      <h2 class="stitle"><span class="grad">9,974 real cases.</span> Definitive priorities.</h2>
+      <p class="ssub">Not synthetic data. Actual authorization cases from a Medicare Advantage health plan analyzed to determine where AI delivers the greatest impact.</p>
+    </div>
+    <div class="vol-grid rv">
+      <div>
+        <div style="font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:14px">Service Line Volume & Approval Rate</div>
+        <div class="vol-row"><div class="vol-name">Out of Area (OOA)</div><div class="vol-track"><div class="vol-fill" data-width="96"><span class="vol-pct">48.1%</span></div></div><div class="vol-app" style="color:var(--amber)">38.9%</div></div>
+        <div class="vol-row"><div class="vol-name">Inpatient LOC</div><div class="vol-track"><div class="vol-fill red" data-width="45"><span class="vol-pct">22.5%</span></div></div><div class="vol-app" style="color:var(--red)">29.8%</div></div>
+        <div class="vol-row"><div class="vol-name">NFDS (Diabetic)</div><div class="vol-track"><div class="vol-fill amber" data-width="16.6"></div></div><div class="vol-app" style="color:var(--red)">11.5%</div></div>
+        <div class="vol-row"><div class="vol-name">Preservice Outpt.</div><div class="vol-track"><div class="vol-fill" data-width="11.6"></div></div><div class="vol-app" style="color:var(--mint)">86.3%</div></div>
+        <div class="vol-row"><div class="vol-name">Nutritional Suppl.</div><div class="vol-track"><div class="vol-fill amber" data-width="9.2"></div></div><div class="vol-app" style="color:var(--mint)">63.5%</div></div>
+        <div class="vol-row"><div class="vol-name">Transplant</div><div class="vol-track"><div class="vol-fill" data-width="9.2"></div></div><div class="vol-app" style="color:var(--mint)">73.6%</div></div>
+        <div class="vol-row"><div class="vol-name">DME</div><div class="vol-track"><div class="vol-fill amber" data-width="6"></div></div><div class="vol-app" style="color:var(--amber)">36.9%</div></div>
+      </div>
+      <div>
+        <div class="pcard rv" style="margin-bottom:14px"><div class="pnum g" style="font-size:28px">OOA + Inpatient = 70.6%</div><div class="pdesc">Two service lines dominate the workload. OOA uses algorithmic urgency/foreseen-need logic. Inpatient LOC requires the deepest clinical criteria and has a 70.2% denial rate.</div></div>
+        <div class="pcard warn rv d1" style="margin-bottom:14px"><div class="pnum w" style="font-size:28px">NFDS: 88.5% one template</div><div class="pdesc">No documented visual or dexterity impairment = denial. Highest-confidence automation opportunity. ~1 week of CQL work.</div></div>
+        <div class="pcard ok rv d2" style="margin-bottom:14px"><div class="pnum c" style="font-size:28px">Preservice: 86.3% approve</div><div class="pdesc">Strong auto-approve pathway. Criteria frequently met with standard documentation. High volume of unnecessary human review today.</div></div>
+        <div class="pcard rv d3"><div class="pnum" style="font-size:28px">~45% auto-triaged</div><div class="pdesc">Expected AI impact: ~45% of cases auto-triaged, ~40% of denials pre-flagged, MD time per case 15 min to 3-8 min.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Criteria Strategy -->
+<section class="sec" id="criteria">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sec-label">Criteria Strategy</div>
+      <h2 class="stitle">No MCG. No InterQual. <span class="grad">No licensing dependency.</span></h2>
+      <p class="ssub">For Medicare/Medicaid, CMS regulation requires CMS criteria as the primary basis. Public criteria are not just cheaper &mdash; they're legally correct.</p>
+    </div>
+    <div class="cmp-grid rv">
+      <div class="cmp-card">
+        <div class="cmp-header">
+          <div class="cmp-icon" style="background:rgba(245,99,66,.1)">&#128274;</div>
+          <div>
+            <div class="cmp-title">MCG / InterQual</div>
+            <div class="cmp-sub">Licensed, $500K-1M+/year</div>
+          </div>
+        </div>
+        <ul class="cmp-list">
+          <li><span class="ico" style="color:var(--red)">&#10007;</span> $500K-1M+ annual licensing per plan</li>
+          <li><span class="ico" style="color:var(--red)">&#10007;</span> Passive reference &mdash; criteria looked up manually</li>
+          <li><span class="ico" style="color:var(--red)">&#10007;</span> For MA denials: must justify use over CMS criteria</li>
+          <li><span class="ico" style="color:var(--red)">&#10007;</span> Not FHIR-native &mdash; custom integration needed</li>
+          <li><span class="ico" style="color:var(--red)">&#10007;</span> Updates controlled by vendor release cycle</li>
+          <li><span class="ico" style="color:var(--red)">&#10007;</span> Proprietary &mdash; can't show to regulators as open basis</li>
+        </ul>
+      </div>
+      <div class="cmp-card win">
+        <div class="cmp-header">
+          <div class="cmp-icon" style="background:var(--mint3)">&#10024;</div>
+          <div>
+            <div class="cmp-title">LucidReview Approach</div>
+            <div class="cmp-sub">CMS criteria + clinical team CQL</div>
+          </div>
+        </div>
+        <ul class="cmp-list">
+          <li><span class="ico" style="color:var(--mint)">&#10003;</span> CMS NCD/LCD: free, public, auto-updated via API</li>
+          <li><span class="ico" style="color:var(--mint)">&#10003;</span> CQL: deterministic, auditable, compiled from policy</li>
+          <li><span class="ico" style="color:var(--mint)">&#10003;</span> MA plans legally required to use CMS criteria</li>
+          <li><span class="ico" style="color:var(--mint)">&#10003;</span> AI drafts CQL from policy text &mdash; team validates</li>
+          <li><span class="ico" style="color:var(--mint)">&#10003;</span> Every denial cites CMS doc + FHIR resource</li>
+          <li><span class="ico" style="color:var(--mint)">&#10003;</span> Shared library amortizes across all customers</li>
+        </ul>
+        <div class="cmp-callout"><strong>CMS guidance:</strong> "Tools, including algorithms and AI, may assist &mdash; but coverage decisions must be based on the individual patient's circumstances and must align with fully established Traditional Medicare coverage criteria."</div>
+      </div>
+    </div>
+    <div style="margin-top:28px" class="rv">
+      <div style="font-family:var(--fm);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--t3);margin-bottom:12px">Criteria coverage from public sources</div>
+      <div class="cov-row"><div class="cov-name">Medi-Cal (DHCS)</div><div class="cov-track"><div class="cov-fill free" data-width="87"></div></div><div class="cov-pct" style="color:var(--mint)">87%</div><div class="cov-badge free">FREE</div></div>
+      <div class="cov-row"><div class="cov-name">Medicare NCD/LCD</div><div class="cov-track"><div class="cov-fill free" data-width="46.4"></div></div><div class="cov-pct" style="color:var(--mint)">46%</div><div class="cov-badge free">FREE</div></div>
+      <div class="cov-row"><div class="cov-name">MCG</div><div class="cov-track"><div class="cov-fill skip" data-width="28.4"></div></div><div class="cov-pct" style="color:var(--red)">28%</div><div class="cov-badge skip">SKIP</div></div>
+      <div class="cov-row"><div class="cov-name">InterQual</div><div class="cov-track"><div class="cov-fill skip" data-width="23.9"></div></div><div class="cov-pct" style="color:var(--red)">24%</div><div class="cov-badge skip">SKIP</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Market -->
+<section class="sec sec-dark" id="market">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sec-label">Market Opportunity</div>
+      <h2 class="stitle">A <span class="grad">$80-225M ARR market</span> with a regulatory forcing function</h2>
+      <p class="ssub">Every MA plan and Medicaid MCO must modernize PA infrastructure by 2026-2027. The mandate creates urgency no sales pitch can match.</p>
+    </div>
+    <div class="mkt-grid rv">
+      <div class="mkt-card c1">
+        <div class="mkt-type">Medicare Advantage</div>
+        <div class="mkt-tam">$40-100M</div>
+        <div class="mkt-taml">Total Addressable Market (ARR)</div>
+        <div class="mkt-stats">
+          <div class="mkt-stat">~250 MA organizations</div>
+          <div class="mkt-stat">34 million enrollees</div>
+          <div class="mkt-stat">$0.75-$1.50 PMPM pricing</div>
+          <div class="mkt-stat">$150K-$2M ARR per customer</div>
+        </div>
+      </div>
+      <div class="mkt-card c2">
+        <div class="mkt-type">Medicaid MCOs</div>
+        <div class="mkt-tam">$25-75M</div>
+        <div class="mkt-taml">Total Addressable Market (ARR)</div>
+        <div class="mkt-stats">
+          <div class="mkt-stat">~200 MCOs across 39 states</div>
+          <div class="mkt-stat">52M managed care enrollees</div>
+          <div class="mkt-stat">Higher PA volume than MA</div>
+          <div class="mkt-stat">Thin margins = strong ROI urgency</div>
+        </div>
+      </div>
+      <div class="mkt-card c3">
+        <div class="mkt-type">Dual-Eligible (D-SNPs)</div>
+        <div class="mkt-tam">$15-50M</div>
+        <div class="mkt-taml">Total Addressable Market (ARR)</div>
+        <div class="mkt-stats">
+          <div class="mkt-stat">~12M dual-eligible individuals</div>
+          <div class="mkt-stat">Fastest-growing Medicare segment</div>
+          <div class="mkt-stat">Most complex criteria environment</div>
+          <div class="mkt-stat">Premium pricing justified</div>
+        </div>
+      </div>
+    </div>
+    <div class="tam-total rv">
+      <div><div class="tam-label">Total Addressable Market</div><div class="tam-sub">MA + Medicaid MCOs + D-SNPs</div></div>
+      <div style="text-align:right"><div class="tam-num grad">$80-225M</div><div class="tam-sub">ARR &middot; SOM Years 1-3: $2-15M ARR</div></div>
+    </div>
+    <div class="reg-grid rv">
+      <div class="reg-card"><div class="reg-date">Jan 2026</div><div class="reg-text">Faster PA decisions: 72hr urgent, 7-day standard. Specific denial reasons mandatory. CMS metrics reporting live.</div></div>
+      <div class="reg-card"><div class="reg-date">Jan 2027</div><div class="reg-text">FHIR Prior Authorization API required for all MA plans and Medicaid MCOs. Provider-facing PA status access mandated.</div></div>
+      <div class="reg-card" style="border-color:rgba(0,229,160,.22)"><div class="reg-date" style="color:var(--mint)">Today</div><div class="reg-text">LucidReview already built to these specifications. PAS, CRD, DTR endpoints implemented and tested.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Competitive -->
+<section class="sec" id="competitive">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sec-label">Competitive Landscape</div>
+      <h2 class="stitle">High clinical depth. AI-native. <span class="grad">No one else here.</span></h2>
+    </div>
+    <div class="rv" style="overflow-x:auto">
+      <table class="ctbl">
+        <thead><tr><th>Competitor</th><th>Approach</th><th>FHIR</th><th>CMS Criteria</th><th>AI Eval</th><th>Full Platform</th><th>MA/Medicaid</th></tr></thead>
+        <tbody>
+          <tr class="me"><td><span class="cname">LucidReview</span></td><td>AI agent + CQL + Reviewer UI</td><td class="ck">&#10003;</td><td class="ck">&#10003; NCD/LCD</td><td class="ck">&#10003;</td><td class="ck">&#10003;</td><td class="ck">&#10003; Purpose-built</td></tr>
+          <tr><td><span class="cname">Cohere Health</span></td><td>AI for specialty PA (MSK, cardio)</td><td class="cp">~</td><td class="cp">Proprietary</td><td class="ck">&#10003;</td><td class="cx">&#10007; Narrow</td><td class="cx">&#10007; Commercial</td></tr>
+          <tr><td><span class="cname">MCG Health</span></td><td>Criteria licensing</td><td class="cx">&#10007;</td><td class="cx">&#10007; Proprietary $$$</td><td class="cx">&#10007; Manual</td><td class="cx">&#10007;</td><td class="cp">~</td></tr>
+          <tr><td><span class="cname">InterQual (Optum)</span></td><td>Criteria licensing</td><td class="cx">&#10007;</td><td class="cx">&#10007; Proprietary $$$</td><td class="cx">&#10007; Manual</td><td class="cx">&#10007;</td><td class="cp">~</td></tr>
+          <tr><td><span class="cname">Waystar</span></td><td>RCM + PA workflow routing</td><td class="cp">~</td><td class="cx">&#10007;</td><td class="cx">&#10007; No clinical AI</td><td class="cp">~ Workflow</td><td class="cp">~</td></tr>
+          <tr><td><span class="cname">EviCore (Cigna)</span></td><td>Specialty PA (captive)</td><td class="cx">&#10007;</td><td class="cx">&#10007; Proprietary</td><td class="cp">~</td><td class="cx">&#10007; Not external</td><td class="cx">&#10007;</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Pricing -->
+<section class="sec sec-surf" id="pricing">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sec-label">Pricing Model</div>
+      <h2 class="stitle">PMPM subscription. <span class="grad">How health plans budget.</span></h2>
+    </div>
+    <div class="price-grid rv">
+      <div class="pc2">
+        <div class="tier">Starter</div>
+        <div class="amt">$1.50</div>
+        <div class="unit">per member / per month</div>
+        <div class="mem">Up to 50K members</div>
+        <ul class="feats">
+          <li>Full AI review workflow</li>
+          <li>CMS NCD/LCD criteria library</li>
+          <li>Reviewer UI (nurse + MD)</li>
+          <li>Da Vinci PAS API</li>
+          <li>1 UM system integration</li>
+          <li>HIPAA BAA &middot; AWS-hosted</li>
+        </ul>
+        <div class="arr">~$900K ARR</div>
+      </div>
+      <div class="pc2 feat">
+        <div class="tier">Growth</div>
+        <div class="amt">$1.25</div>
+        <div class="unit">per member / per month</div>
+        <div class="mem">50K - 200K members</div>
+        <ul class="feats">
+          <li>Everything in Starter</li>
+          <li>CRD + DTR endpoints</li>
+          <li>Criteria authoring portal</li>
+          <li>CMS-0057-F audit reporting</li>
+          <li>2 UM system integrations</li>
+          <li>Dedicated success manager</li>
+        </ul>
+        <div class="arr">$750K-$3M ARR</div>
+      </div>
+      <div class="pc2">
+        <div class="tier">Scale</div>
+        <div class="amt">$1.00</div>
+        <div class="unit">per member / per month</div>
+        <div class="mem">200K - 500K members</div>
+        <ul class="feats">
+          <li>Everything in Growth</li>
+          <li>AI criteria synthesis</li>
+          <li>Shadow mode analytics</li>
+          <li>Custom NLP tuning</li>
+          <li>3 UM integrations + SLA</li>
+        </ul>
+        <div class="arr">$2.4M-$6M ARR</div>
+      </div>
+      <div class="pc2">
+        <div class="tier">Enterprise</div>
+        <div class="amt">$0.75+</div>
+        <div class="unit">per member / per month (negotiated)</div>
+        <div class="mem">500K+ members</div>
+        <ul class="feats">
+          <li>Everything in Scale</li>
+          <li>Private VPC deployment</li>
+          <li>Unlimited integrations</li>
+          <li>Joint criteria governance</li>
+          <li>Custom model fine-tuning</li>
+        </ul>
+        <div class="arr">$4.5M+ ARR</div>
+      </div>
+    </div>
+    <div class="roi-strip rv">
+      <div class="roi-cell"><div class="roi-num grad">60-80%</div><div class="roi-lab">Cost reduction per case<br>$15-25 today to $3-8</div></div>
+      <div class="roi-cell"><div class="roi-num" style="color:var(--amber)">$540K-$1M</div><div class="roi-lab">Annual savings for a<br>100K-member plan</div></div>
+      <div class="roi-cell"><div class="roi-num grad">3-4 mo</div><div class="roi-lab">Shadow mode to<br>production deployment</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- Execution -->
+<section class="sec sec-dark" id="execution">
+  <div class="wrap">
+    <div class="sh rv">
+      <div class="sec-label">Execution Plan</div>
+      <h2 class="stitle">Land with OOA. <span class="grad">Expand to full platform.</span></h2>
+      <p class="ssub">A structured pilot de-risks the sale and generates concordance data for subsequent customers. Every plan goes through shadow mode first.</p>
+    </div>
+    <div class="tl-wrap">
+      <div class="tl-item rv">
+        <div class="tl-dot">P0</div>
+        <div class="tl-body">
+          <div class="tl-phase">Weeks 1-8 &middot; Criteria Foundation</div>
+          <div class="tl-title">OOA + NFDS + Preservice = 62% of volume</div>
+          <div class="tl-desc">Build CQL criteria for OOA urgency/foreseen-need, NFDS visual/dexterity check, and Preservice auto-approve pathway. AI-assisted authoring from CMS LCD policy text &mdash; clinical team validates. 1 Clinical Informaticist.</div>
+          <div class="tl-tags"><span class="tag tc">OOA 48.1%</span><span class="tag tc">NFDS 8.3%</span><span class="tag tc">Preservice 5.8%</span></div>
+        </div>
+      </div>
+      <div class="tl-item rv d1">
+        <div class="tl-dot">P1</div>
+        <div class="tl-body">
+          <div class="tl-phase">Weeks 1-12 &middot; Platform</div>
+          <div class="tl-title">Production Hardening + First UM Integration</div>
+          <div class="tl-desc">Harden HAPI FHIR, Redis queue, observability. Build first UM system adapter (Jiva/Macess). Complete HIPAA/BAA and security review.</div>
+          <div class="tl-tags"><span class="code-tag">AWS ECS</span><span class="code-tag">HIPAA BAA</span><span class="code-tag">HAPI FHIR</span></div>
+        </div>
+      </div>
+      <div class="tl-item rv d2">
+        <div class="tl-dot">P2</div>
+        <div class="tl-body">
+          <div class="tl-phase">Months 3-5 &middot; Pilot</div>
+          <div class="tl-title">Shadow Mode at First Customer</div>
+          <div class="tl-desc">AI runs in parallel &mdash; no production decisions. Measure concordance rate. Target: 85%+ on clear approve/deny cases. Generate data needed to close full production contract.</div>
+          <div class="tl-tags"><span class="tag tm">First Customer</span><span class="tag tm">Concordance &gt;85%</span></div>
+        </div>
+      </div>
+      <div class="tl-item rv d3">
+        <div class="tl-dot">P3</div>
+        <div class="tl-body">
+          <div class="tl-phase">Months 5-7 &middot; Criteria Phase 1</div>
+          <div class="tl-title">Inpatient LOC + Transplant = 90% Coverage</div>
+          <div class="tl-desc">The hardest and most valuable service lines. Inpatient LOC is 22.5% of volume with 70.2% denial rate. CQL built from CMS inpatient admission LCDs by MD + Informaticist.</div>
+          <div class="tl-tags"><span class="tag ta">Inpatient 22.5%</span><span class="tag ta">Transplant 4.6%</span><span class="code-tag">MD required</span></div>
+        </div>
+      </div>
+      <div class="tl-item rv d4">
+        <div class="tl-dot">GO</div>
+        <div class="tl-body">
+          <div class="tl-phase">Month 7+ &middot; Production</div>
+          <div class="tl-title">Full Rollout + PMPM Contract</div>
+          <div class="tl-desc">Clear cases auto-approved per plan's thresholds. Full PMPM subscription activates. Expand: additional service lines, second integration, pipeline for Customer 2 and 3.</div>
+          <div class="tl-tags"><span class="tag tm">PMPM Live</span><span class="tag tc">Customer 2+3</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="inv-grid rv">
+      <div class="inv-cell"><div class="inv-label">One-Time Investment</div><div class="inv-amt">$400-600K</div><div class="inv-note">Platform hardening + first integration + security</div></div>
+      <div class="inv-cell"><div class="inv-label">Annual Operating</div><div class="inv-amt">$500-760K</div><div class="inv-note">Clinical team + sales + infrastructure</div></div>
+      <div class="inv-cell"><div class="inv-label">Break-Even</div><div class="inv-amt">3-4 Customers</div><div class="inv-note">Mid-size MA plans at $1.25 PMPM / 100K members</div></div>
+      <div class="inv-cell"><div class="inv-label">Year 3 SOM</div><div class="inv-amt">$2-15M ARR</div><div class="inv-note">5-15 customers across MA, Medicaid, D-SNP</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CTA -->
+<section class="cta-sec" id="cta">
+  <div class="cta-glow"></div>
+  <div class="wrap">
+    <div class="sec-label rv">The Bottom Line</div>
+    <h2 class="rv">The chart has been read.<br><span class="grad">The reviewer is waiting.</span></h2>
+    <p class="rv d1">LucidReview is live, tested on 9,974 real cases, and built to CMS-0057-F specifications. The criteria library is the work &mdash; and the moat.</p>
+    <div class="cta-acts rv d2">
+      <a href="https://lucidreview.mhkdevsandbox.com/" class="btn-p" target="_blank" rel="noopener">Try It Live</a>
+      <a href="index.html" class="btn-s">Product Overview</a>
+      <a href="#workflow" class="btn-s">How It Works</a>
+    </div>
+    <div class="cta-sub rv d3">Built on AWS Bedrock &middot; FHIR R4 &middot; Da Vinci PAS/CRD/DTR &middot; HIPAA-eligible &middot; 218 tests passing</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <div class="fi">
+      <div class="flogo"><div class="flm">LR</div><span class="flt">LucidReview</span></div>
+      <div class="fcopy">Confidential &middot; Internal Use Only &middot; March 2026</div>
+    </div>
+  </div>
+</footer>
+
+</div>
+
+<script>
+/* Particle canvas */
+(function(){
+  const c=document.getElementById('bgc'),ctx=c.getContext('2d');
+  let W,H,nodes=[];
+  function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight}
+  function mk(){return{x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.4+.4,h:Math.random()>.5?'#00d4f5':'#00e5a0'}}
+  function init(){nodes=Array.from({length:75},mk)}
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){
+      const dx=nodes[i].x-nodes[j].x,dy=nodes[i].y-nodes[j].y,d=Math.sqrt(dx*dx+dy*dy);
+      if(d<115){ctx.beginPath();ctx.strokeStyle=`rgba(0,212,245,${.11*(1-d/115)})`;ctx.lineWidth=.5;ctx.moveTo(nodes[i].x,nodes[i].y);ctx.lineTo(nodes[j].x,nodes[j].y);ctx.stroke()}
+    }
+    nodes.forEach(n=>{
+      ctx.beginPath();ctx.arc(n.x,n.y,n.r,0,Math.PI*2);ctx.fillStyle=n.h+'88';ctx.fill();
+      n.x+=n.vx;n.y+=n.vy;
+      if(n.x<0||n.x>W)n.vx*=-1;if(n.y<0||n.y>H)n.vy*=-1;
+    });
+    requestAnimationFrame(draw);
+  }
+  resize();init();draw();
+  window.addEventListener('resize',resize);
+})();
+
+/* Nav scroll */
+const nav=document.getElementById('mn');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>40));
+
+/* Scroll reveal */
+const ro=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+/* Counter animation */
+const co=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  const el=e.target,tgt=+el.dataset.count,suf=el.dataset.suf||'';
+  let t0=null;
+  (function step(ts){if(!t0)t0=ts;const p=Math.min((ts-t0)/1500,1),ease=1-Math.pow(1-p,3);el.textContent=Math.floor(ease*tgt).toLocaleString()+suf;if(p<1)requestAnimationFrame(step);else el.textContent=tgt.toLocaleString()+suf})(performance.now());
+  co.unobserve(el);
+}),{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>co.observe(el));
+
+/* Bar fills on scroll */
+const bo=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.querySelectorAll('.vol-fill[data-width],.cov-fill[data-width]').forEach(b=>{
+    b.style.width=b.dataset.width+'%';
+  });
+  bo.unobserve(e.target);
+}),{threshold:.15});
+document.querySelectorAll('.vol-grid,.cov-row').forEach(el=>bo.observe(el));
+/* Also observe parent sections for coverage bars */
+document.querySelectorAll('#criteria').forEach(el=>bo.observe(el));
+</script>
+</body>
+</html>
